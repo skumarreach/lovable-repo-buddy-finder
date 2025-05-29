@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronDown } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import AuthButton from './AuthButton';
+import ParticipateWidget from './ParticipateWidget';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,7 +28,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-4 shadow-lg">
+    <header className="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-4 shadow-lg relative">
       <div className="container mx-auto px-5">
         {/* First Line: Logo on left, Badge in center, Auth & Language on right */}
         <div className="flex justify-between items-center">
@@ -96,6 +97,11 @@ const Header = () => {
             <LanguageSwitcher />
           </div>
         </div>
+      </div>
+      
+      {/* Participate Widget positioned below auth controls */}
+      <div className="absolute top-full right-2 mt-2 z-50">
+        <ParticipateWidget />
       </div>
     </header>
   );

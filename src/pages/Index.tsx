@@ -9,7 +9,6 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import GivingSection from '@/components/GivingSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
-import ParticipateWidget from '@/components/ParticipateWidget';
 import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
@@ -33,7 +32,6 @@ const Index = () => {
       </main>
       
       <Footer />
-      <ParticipateWidget />
       <Chatbot />
     </div>
   );
