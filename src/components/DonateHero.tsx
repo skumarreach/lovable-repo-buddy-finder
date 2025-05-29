@@ -9,9 +9,6 @@ const DonateHero = () => {
         <p className="text-xl max-w-4xl mx-auto mb-8">
           Your donation creates pathways to independence, dignity, and joy for children with special needs at Gurukulam. Every contribution, no matter the size, helps build a foundation for their brighter future.
         </p>
-        <a href="#donation-form" className="inline-block bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-colors">
-          Donate Now
-        </a>
       </div>
     </section>
   );
