@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -27,7 +28,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/35592194-787a-4331-9848-3f5692075b8f.png" 
               alt="Gurukulam" 
-              className="h-14 w-14 rounded-full border-2 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300"
+              className="h-20 w-20 rounded-full border-2 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
