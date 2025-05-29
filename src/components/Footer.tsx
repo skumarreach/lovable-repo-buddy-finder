@@ -10,11 +10,14 @@ const Footer = () => {
         <div className="flex flex-wrap justify-center space-x-4 mb-8">
           <Link to="/" className="hover:underline">Home</Link>
           <Link to="/about" className="hover:underline">About</Link>
-          <a href="#" className="hover:underline">Programs</a>
-          <a href="#" className="hover:underline">Get Involved</a>
+          <Link to="/causes" className="hover:underline">Causes</Link>
+          <a href="#" className="hover:underline">Gallery</a>
+          <a href="#" className="hover:underline">Donate</a>
           <a href="#" className="hover:underline">Contact</a>
           <a href="#" className="hover:underline">Privacy Policy</a>
         </div>
+        <p className="mb-2">Gurukulam Integrated Centre for Children with Special Needs</p>
+        <p className="mb-4">Tax exemption under 80G available for all donations</p>
         <p className="text-sm text-gray-300">
           © 2025 Gurukulam Integrated Centre for Children with Special Needs. All rights reserved.
         </p>
