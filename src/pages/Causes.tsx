@@ -11,6 +11,7 @@ import CausesTestimonials from '@/components/CausesTestimonials';
 import Newsletter from '@/components/Newsletter';
 import CausesCTA from '@/components/CausesCTA';
 import ParticipateWidget from '@/components/ParticipateWidget';
+import Chatbot from '@/components/Chatbot';
 
 const Causes = () => {
   return (
@@ -34,6 +35,7 @@ const Causes = () => {
       
       <Footer />
       <ParticipateWidget />
+      <Chatbot />
     </div>
   );
 };

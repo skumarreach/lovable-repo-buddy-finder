@@ -9,6 +9,7 @@ import GalleryImpact from '@/components/GalleryImpact';
 import GalleryTestimonials from '@/components/GalleryTestimonials';
 import GalleryCTA from '@/components/GalleryCTA';
 import ParticipateWidget from '@/components/ParticipateWidget';
+import Chatbot from '@/components/Chatbot';
 
 const Gallery = () => {
   return (
@@ -30,6 +31,7 @@ const Gallery = () => {
       
       <Footer />
       <ParticipateWidget />
+      <Chatbot />
     </div>
   );
 };

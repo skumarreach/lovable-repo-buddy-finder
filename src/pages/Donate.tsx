@@ -11,6 +11,7 @@ import DonateTestimonials from '@/components/DonateTestimonials';
 import DonateForm from '@/components/DonateForm';
 import DonateCTA from '@/components/DonateCTA';
 import ParticipateWidget from '@/components/ParticipateWidget';
+import Chatbot from '@/components/Chatbot';
 
 const Donate = () => {
   return (
@@ -34,6 +35,7 @@ const Donate = () => {
       
       <Footer />
       <ParticipateWidget />
+      <Chatbot />
     </div>
   );
 };

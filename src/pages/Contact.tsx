@@ -11,6 +11,7 @@ import ContactEmergency from '@/components/ContactEmergency';
 import ContactAccessibility from '@/components/ContactAccessibility';
 import ContactCTA from '@/components/ContactCTA';
 import ParticipateWidget from '@/components/ParticipateWidget';
+import Chatbot from '@/components/Chatbot';
 
 const Contact = () => {
   return (
@@ -34,6 +35,7 @@ const Contact = () => {
       
       <Footer />
       <ParticipateWidget />
+      <Chatbot />
     </div>
   );
 };

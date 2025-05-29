@@ -8,6 +8,7 @@ import OurApproach from '@/components/OurApproach';
 import OurTeam from '@/components/OurTeam';
 import AboutTestimonials from '@/components/AboutTestimonials';
 import ParticipateWidget from '@/components/ParticipateWidget';
+import Chatbot from '@/components/Chatbot';
 
 const About = () => {
   return (
@@ -28,6 +29,7 @@ const About = () => {
       
       <Footer />
       <ParticipateWidget />
+      <Chatbot />
     </div>
   );
 };
