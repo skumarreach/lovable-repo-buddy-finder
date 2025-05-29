@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
+import AuthButton from './AuthButton';
 
 const Header = () => {
   const location = useLocation();
@@ -52,7 +53,10 @@ const Header = () => {
               );
             })}
           </ul>
-          <LanguageSwitcher />
+          <div className="flex items-center gap-2">
+            <AuthButton />
+            <LanguageSwitcher />
+          </div>
         </nav>
       </div>
     </header>
