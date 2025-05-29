@@ -27,7 +27,12 @@
     "signUpSuccess": "Account created successfully!",
     "signOutSuccess": "Successfully signed out!",
     "checkEmail": "Please check your email to verify your account.",
-    "error": "Authentication Error"
+    "error": "Authentication Error",
+    "orContinueWith": "Or continue with",
+    "orUseEmail": "Or use email",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithMicrosoft": "Continue with Microsoft",
+    "continueWithApple": "Continue with Apple"
   },
   "hero": {
     "title": "Empowering Rural Education Through Community Support",

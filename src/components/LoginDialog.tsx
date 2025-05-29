@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
+import SocialLoginButtons from './SocialLoginButtons';
 
 interface LoginDialogProps {
   open: boolean;
@@ -70,30 +71,47 @@ const LoginDialog = ({ open, onOpenChange }: LoginDialogProps) => {
             {isSignUp ? t('auth.createAccount') : t('auth.enterCredentials')}
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="email">{t('auth.email')}</Label>
-            <Input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+        
+        <div className="space-y-6">
+          <SocialLoginButtons />
+          
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                {t('auth.orUseEmail')}
+              </span>
+            </div>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">{t('auth.password')}</Label>
-            <Input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? t('auth.loading') : isSignUp ? t('auth.signUp') : t('auth.signIn')}
-          </Button>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="email">{t('auth.email')}</Label>
+              <Input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">{t('auth.password')}</Label>
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <Button type="submit" className="w-full" disabled={loading}>
+              {loading ? t('auth.loading') : isSignUp ? t('auth.signUp') : t('auth.signIn')}
+            </Button>
+          </form>
+          
           <Button
             type="button"
             variant="ghost"
@@ -102,7 +120,7 @@ const LoginDialog = ({ open, onOpenChange }: LoginDialogProps) => {
           >
             {isSignUp ? t('auth.alreadyHaveAccount') : t('auth.needAccount')}
           </Button>
-        </form>
+        </div>
       </DialogContent>
     </Dialog>
   );

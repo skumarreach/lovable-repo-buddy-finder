@@ -27,7 +27,12 @@
     "signUpSuccess": "खाता सफलतापूर्वक बनाया गया!",
     "signOutSuccess": "सफलतापूर्वक साइन आउट हो गए!",
     "checkEmail": "कृपया अपना खाता सत्यापित करने के लिए अपना ईमेल जांचें।",
-    "error": "प्रमाणीकरण त्रुटि"
+    "error": "प्रमाणीकरण त्रुटि",
+    "orContinueWith": "या इसके साथ जारी रखें",
+    "orUseEmail": "या ईमेल का उपयोग करें",
+    "continueWithGoogle": "Google के साथ जारी रखें",
+    "continueWithMicrosoft": "Microsoft के साथ जारी रखें",
+    "continueWithApple": "Apple के साथ जारी रखें"
   },
   "hero": {
     "title": "सामुदायिक सहयोग के माध्यम से ग्रामीण शिक्षा को सशक्त बनाना",
