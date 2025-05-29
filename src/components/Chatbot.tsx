@@ -1,9 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, MessageSquare, X, Send } from 'lucide-react';
+import { Bot, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
-import { useToast } from '@/hooks/use-toast';
 
 interface Message {
   id: string;
@@ -13,8 +11,7 @@ interface Message {
 }
 
 const Chatbot = () => {
-  const [isEnabled, setIsEnabled] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -26,7 +23,6 @@ const Chatbot = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { toast } = useToast();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -105,140 +101,80 @@ const Chatbot = () => {
     }
   };
 
-  const handleToggle = (checked: boolean) => {
-    setIsEnabled(checked);
-    if (!checked) {
-      setIsOpen(false);
-      toast({
-        title: "Chatbot disabled",
-        description: "You can re-enable the chatbot anytime using the toggle switch.",
-      });
-    } else {
-      toast({
-        title: "Chatbot enabled",
-        description: "The chatbot is now available to help answer your questions!",
-      });
-    }
-  };
-
-  if (!isEnabled) {
-    return (
-      <div className="fixed bottom-4 right-4 z-50">
-        <div className="bg-white rounded-lg shadow-lg p-4 border">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Bot className="w-5 h-5 text-gray-400" />
-              <span className="text-sm text-gray-600">Enable Chatbot</span>
-            </div>
-            <Switch checked={isEnabled} onCheckedChange={handleToggle} />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="fixed bottom-4 right-4 z-50">
-      {!isOpen ? (
-        <div className="bg-white rounded-lg shadow-lg border">
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center space-x-2">
-                <Bot className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-medium">Chatbot</span>
-              </div>
-              <Switch checked={isEnabled} onCheckedChange={handleToggle} />
-            </div>
-            <Button
-              onClick={() => setIsOpen(true)}
-              className="w-full bg-blue-600 hover:bg-blue-700"
+      <div className="bg-white rounded-lg shadow-2xl border w-80 h-96 flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between p-4 border-b bg-blue-600 text-white rounded-t-lg">
+          <div className="flex items-center space-x-2">
+            <Bot className="w-5 h-5" />
+            <span className="font-medium">Gurukulam Assistant</span>
+          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(false)}
+            className="h-6 w-6 text-white hover:bg-white/10"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        </div>
+
+        {/* Messages */}
+        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {messages.map((message) => (
+            <div
+              key={message.id}
+              className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
             >
-              <MessageSquare className="w-4 h-4 mr-2" />
-              Chat with us
+              <div
+                className={`max-w-[80%] p-3 rounded-lg ${
+                  message.isBot
+                    ? 'bg-gray-100 text-gray-800'
+                    : 'bg-blue-600 text-white'
+                }`}
+              >
+                <p className="text-sm">{message.text}</p>
+              </div>
+            </div>
+          ))}
+          {isTyping && (
+            <div className="flex justify-start">
+              <div className="bg-gray-100 p-3 rounded-lg">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                </div>
+              </div>
+            </div>
+          )}
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* Input */}
+        <div className="p-4 border-t">
+          <div className="flex space-x-2">
+            <input
+              type="text"
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Type your message..."
+              className="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm"
+              disabled={isTyping}
+            />
+            <Button
+              onClick={handleSendMessage}
+              disabled={!inputMessage.trim() || isTyping}
+              size="icon"
+              className="bg-blue-600 hover:bg-blue-700"
+            >
+              <Send className="w-4 h-4" />
             </Button>
           </div>
         </div>
-      ) : (
-        <div className="bg-white rounded-lg shadow-2xl border w-80 h-96 flex flex-col">
-          {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b bg-blue-600 text-white rounded-t-lg">
-            <div className="flex items-center space-x-2">
-              <Bot className="w-5 h-5" />
-              <span className="font-medium">Gurukulam Assistant</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Switch 
-                checked={isEnabled} 
-                onCheckedChange={handleToggle}
-                className="data-[state=checked]:bg-white/20"
-              />
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                className="h-6 w-6 text-white hover:bg-white/10"
-              >
-                <X className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
-              >
-                <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
-                    message.isBot
-                      ? 'bg-gray-100 text-gray-800'
-                      : 'bg-blue-600 text-white'
-                  }`}
-                >
-                  <p className="text-sm">{message.text}</p>
-                </div>
-              </div>
-            ))}
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-gray-100 p-3 rounded-lg">
-                  <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                  </div>
-                </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Input */}
-          <div className="p-4 border-t">
-            <div className="flex space-x-2">
-              <input
-                type="text"
-                value={inputMessage}
-                onChange={(e) => setInputMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
-                className="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm"
-                disabled={isTyping}
-              />
-              <Button
-                onClick={handleSendMessage}
-                disabled={!inputMessage.trim() || isTyping}
-                size="icon"
-                className="bg-blue-600 hover:bg-blue-700"
-              >
-                <Send className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 };
