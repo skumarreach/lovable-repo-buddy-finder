@@ -39,7 +39,7 @@ const AuthButton = () => {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+          <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 h-9 min-w-[80px]">
             <User className="h-4 w-4 mr-2" />
             {user.email}
           </Button>
@@ -60,7 +60,7 @@ const AuthButton = () => {
         variant="outline"
         size="sm"
         onClick={() => setShowLoginDialog(true)}
-        className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+        className="bg-white/10 border-white/20 text-white hover:bg-white/20 h-9 min-w-[80px]"
       >
         {t('auth.signIn')}
       </Button>
