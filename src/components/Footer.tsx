@@ -1,9 +1,11 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
   
   return (
     <footer className="bg-slate-800 text-white py-12 text-center">
@@ -16,18 +18,18 @@ const Footer = () => {
           />
         </div>
         <div className="flex flex-wrap justify-center space-x-4 mb-8">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/about" className="hover:underline">About</Link>
-          <Link to="/causes" className="hover:underline">Causes</Link>
-          <Link to="/gallery" className="hover:underline">Gallery</Link>
-          <Link to="/transparency" className="hover:underline">Transparency</Link>
-          <Link to="/contact" className="hover:underline">Contact</Link>
-          <a href="#" className="hover:underline">Privacy Policy</a>
+          <Link to="/" className="hover:underline">{t('nav.home')}</Link>
+          <Link to="/about" className="hover:underline">{t('nav.about')}</Link>
+          <Link to="/causes" className="hover:underline">{t('nav.causes')}</Link>
+          <Link to="/gallery" className="hover:underline">{t('nav.gallery')}</Link>
+          <Link to="/transparency" className="hover:underline">{t('nav.transparency')}</Link>
+          <Link to="/contact" className="hover:underline">{t('nav.contact')}</Link>
+          <a href="#" className="hover:underline">{t('footer.privacyPolicy')}</a>
         </div>
-        <p className="mb-2">Gurukulam Integrated Centre for Children with Special Needs</p>
-        <p className="mb-4">Tax exemption under 80G available for all donations</p>
+        <p className="mb-2">{t('footer.organization')}</p>
+        <p className="mb-4">{t('footer.taxExemption')}</p>
         <p className="text-sm text-slate-300">
-          © {currentYear} Gurukulam Integrated Centre for Children with Special Needs. All rights reserved.
+          {t('footer.copyright', { year: currentYear })}
         </p>
       </div>
     </footer>

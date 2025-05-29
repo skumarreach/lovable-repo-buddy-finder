@@ -1,17 +1,21 @@
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
   const location = useLocation();
+  const { t } = useTranslation();
   
   const navItems = [
-    { path: '/social', label: 'Social Network' },
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/causes', label: 'Causes' },
-    { path: '/gallery', label: 'Gallery' },
-    { path: '/transparency', label: 'Transparency' },
-    { path: '/contact', label: 'Contact' }
+    { path: '/social', label: t('nav.social') },
+    { path: '/', label: t('nav.home') },
+    { path: '/about', label: t('nav.about') },
+    { path: '/causes', label: t('nav.causes') },
+    { path: '/gallery', label: t('nav.gallery') },
+    { path: '/transparency', label: t('nav.transparency') },
+    { path: '/contact', label: t('nav.contact') }
   ];
 
   return (
@@ -24,7 +28,7 @@ const Header = () => {
             className="h-10 w-10"
           />
         </div>
-        <nav className="mt-4 md:mt-0">
+        <nav className="mt-4 md:mt-0 flex items-center gap-4">
           <ul className="flex flex-wrap justify-center gap-3">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
@@ -48,6 +52,7 @@ const Header = () => {
               );
             })}
           </ul>
+          <LanguageSwitcher />
         </nav>
       </div>
     </header>

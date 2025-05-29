@@ -1,0 +1,63 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "causes": "Causes",
+    "gallery": "Gallery",
+    "transparency": "Transparency",
+    "contact": "Contact",
+    "social": "Social Network"
+  },
+  "footer": {
+    "organization": "Gurukulam Integrated Centre for Children with Special Needs",
+    "taxExemption": "Tax exemption under 80G available for all donations",
+    "copyright": "© {{year}} Gurukulam Integrated Centre for Children with Special Needs. All rights reserved.",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "transparency": {
+    "title": "Complete Transparency",
+    "subtitle": "At Gurukulam, we believe transparency builds trust. Here's an honest look at our journey, challenges, and unwavering commitment to the children we serve.",
+    "promise": {
+      "title": "Our Promise of Openness",
+      "description": "Transparency isn't just a policy for us—it's a core value that guides every decision we make.",
+      "financial": {
+        "title": "Financial Clarity",
+        "description": "Every rupee accounted for, every expense justified, every impact measured."
+      },
+      "communication": {
+        "title": "Open Communication",
+        "description": "Regular updates to donors, families, and community about our progress and challenges."
+      },
+      "reporting": {
+        "title": "Honest Reporting",
+        "description": "We share both our successes and our struggles, learning from every experience."
+      },
+      "impact": {
+        "title": "Real-Time Impact",
+        "description": "See how your support directly translates into meaningful change for our children."
+      }
+    },
+    "founders": {
+      "title": "The Selfless Hearts Behind Gurukulam",
+      "description": "Our founders didn't start this journey for recognition—they started it because they couldn't stand by and watch children struggle without support."
+    },
+    "challenges": {
+      "title": "The Unspoken Challenges We Face",
+      "description": "Running a nonprofit isn't glamorous. It's filled with obstacles that would make many give up. Here's our honest account."
+    },
+    "financialTransparency": {
+      "title": "Where Every Rupee Goes",
+      "description": "Complete financial transparency because your trust is our most valuable asset."
+    },
+    "cta": {
+      "title": "Join Our Transparent Journey",
+      "description": "When you support Gurukulam, you're not just making a donation—you're becoming part of a family committed to radical transparency and unwavering dedication to children with special needs.",
+      "support": "Support Our Mission",
+      "ask": "Ask Us Anything"
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to main content"
+  }
+}

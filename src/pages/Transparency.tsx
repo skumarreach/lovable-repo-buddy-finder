@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ParticipateWidget from '@/components/ParticipateWidget';
@@ -8,10 +8,12 @@ import SectionTitle from '@/components/SectionTitle';
 import { Heart, Clock, Users, TrendingUp } from 'lucide-react';
 
 const Transparency = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <a href="#main-content" className="absolute -top-10 left-0 bg-red-600 text-white p-2 z-50 focus:top-0">
-        Skip to main content
+        {t('common.skipToContent')}
       </a>
       
       <Header />
@@ -20,10 +22,9 @@ const Transparency = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl font-bold mb-6">Complete Transparency</h1>
+            <h1 className="text-5xl font-bold mb-6">{t('transparency.title')}</h1>
             <p className="text-xl max-w-3xl mx-auto">
-              At Gurukulam, we believe transparency builds trust. Here's an honest look at our journey, 
-              challenges, and unwavering commitment to the children we serve.
+              {t('transparency.subtitle')}
             </p>
           </div>
         </section>
@@ -32,33 +33,33 @@ const Transparency = () => {
         <section className="py-16 px-8">
           <div className="container mx-auto">
             <SectionTitle 
-              title="Our Promise of Openness"
-              description="Transparency isn't just a policy for us—it's a core value that guides every decision we make."
+              title={t('transparency.promise.title')}
+              description={t('transparency.promise.description')}
             />
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               <div className="text-center p-6 bg-white rounded-lg shadow-lg">
                 <TrendingUp className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Financial Clarity</h3>
-                <p className="text-gray-600">Every rupee accounted for, every expense justified, every impact measured.</p>
+                <h3 className="text-xl font-bold mb-2">{t('transparency.promise.financial.title')}</h3>
+                <p className="text-gray-600">{t('transparency.promise.financial.description')}</p>
               </div>
               
               <div className="text-center p-6 bg-white rounded-lg shadow-lg">
                 <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Open Communication</h3>
-                <p className="text-gray-600">Regular updates to donors, families, and community about our progress and challenges.</p>
+                <h3 className="text-xl font-bold mb-2">{t('transparency.promise.communication.title')}</h3>
+                <p className="text-gray-600">{t('transparency.promise.communication.description')}</p>
               </div>
               
               <div className="text-center p-6 bg-white rounded-lg shadow-lg">
                 <Heart className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Honest Reporting</h3>
-                <p className="text-gray-600">We share both our successes and our struggles, learning from every experience.</p>
+                <h3 className="text-xl font-bold mb-2">{t('transparency.promise.reporting.title')}</h3>
+                <p className="text-gray-600">{t('transparency.promise.reporting.description')}</p>
               </div>
               
               <div className="text-center p-6 bg-white rounded-lg shadow-lg">
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Real-Time Impact</h3>
-                <p className="text-gray-600">See how your support directly translates into meaningful change for our children.</p>
+                <h3 className="text-xl font-bold mb-2">{t('transparency.promise.impact.title')}</h3>
+                <p className="text-gray-600">{t('transparency.promise.impact.description')}</p>
               </div>
             </div>
           </div>
@@ -68,8 +69,8 @@ const Transparency = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-8">
             <SectionTitle 
-              title="The Selfless Hearts Behind Gurukulam"
-              description="Our founders didn't start this journey for recognition—they started it because they couldn't stand by and watch children struggle without support."
+              title={t('transparency.founders.title')}
+              description={t('transparency.founders.description')}
             />
             
             <div className="max-w-4xl mx-auto">
@@ -112,8 +113,8 @@ const Transparency = () => {
         <section className="py-16">
           <div className="container mx-auto px-8">
             <SectionTitle 
-              title="The Unspoken Challenges We Face"
-              description="Running a nonprofit isn't glamorous. It's filled with obstacles that would make many give up. Here's our honest account."
+              title={t('transparency.challenges.title')}
+              description={t('transparency.challenges.description')}
             />
             
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -212,8 +213,8 @@ const Transparency = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-8">
             <SectionTitle 
-              title="Where Every Rupee Goes"
-              description="Complete financial transparency because your trust is our most valuable asset."
+              title={t('transparency.financialTransparency.title')}
+              description={t('transparency.financialTransparency.description')}
             />
             
             <div className="max-w-4xl mx-auto">
@@ -271,23 +272,22 @@ const Transparency = () => {
         {/* Call to Action */}
         <section className="py-16 bg-gradient-to-r from-red-600 to-pink-600 text-white">
           <div className="container mx-auto px-8 text-center">
-            <h2 className="text-4xl font-bold mb-6">Join Our Transparent Journey</h2>
+            <h2 className="text-4xl font-bold mb-6">{t('transparency.cta.title')}</h2>
             <p className="text-xl max-w-3xl mx-auto mb-8">
-              When you support Gurukulam, you're not just making a donation—you're becoming part of a family 
-              committed to radical transparency and unwavering dedication to children with special needs.
+              {t('transparency.cta.description')}
             </p>
             <div className="space-x-4">
               <a 
-                href="/donate" 
+                href="/contact" 
                 className="inline-block bg-white text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
-                Support Our Mission
+                {t('transparency.cta.support')}
               </a>
               <a 
                 href="/contact" 
                 className="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-red-600 transition-colors"
               >
-                Ask Us Anything
+                {t('transparency.cta.ask')}
               </a>
             </div>
           </div>
