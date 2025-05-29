@@ -48,25 +48,37 @@ const Header = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="start" 
-              className="w-56 bg-white border border-gray-200 shadow-lg"
+              className="w-64 bg-gradient-to-br from-blue-50 via-white to-indigo-50 border-2 border-blue-200/30 shadow-2xl rounded-2xl backdrop-blur-sm z-50 overflow-hidden"
+              sideOffset={8}
             >
-              {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
-                return (
-                  <DropdownMenuItem key={item.path} asChild>
-                    <Link 
-                      to={item.path}
-                      className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                        isActive 
-                          ? 'bg-blue-50 text-blue-800 font-medium' 
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  </DropdownMenuItem>
-                );
-              })}
+              <div className="p-2">
+                {navItems.map((item, index) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <DropdownMenuItem key={item.path} asChild className="p-0 mb-1 last:mb-0">
+                      <Link 
+                        to={item.path}
+                        className={`
+                          w-full text-left px-4 py-3 text-sm font-medium rounded-xl
+                          transition-all duration-300 ease-in-out
+                          border border-transparent
+                          flex items-center justify-between
+                          ${isActive 
+                            ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg transform scale-[1.02] border-blue-300' 
+                            : 'text-gray-700 hover:bg-gradient-to-r hover:from-blue-100 hover:to-indigo-100 hover:text-blue-800 hover:shadow-md hover:scale-[1.01] hover:border-blue-200'
+                          }
+                        `}
+                      >
+                        <span>{item.label}</span>
+                        {isActive && (
+                          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                        )}
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </div>
+              <div className="h-1 bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400"></div>
             </DropdownMenuContent>
           </DropdownMenu>
 
