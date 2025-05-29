@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -21,21 +22,29 @@ const Header = () => {
 
   return (
     <header className="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-4 shadow-lg">
-      <div className="container mx-auto px-5 flex flex-col md:flex-row justify-between items-center">
-        {/* Logo Only - No Text */}
-        <Link to="/" className="group transition-all duration-300 hover:scale-105">
-          <div className="relative">
-            <img 
-              src="/lovable-uploads/35592194-787a-4331-9848-3f5692075b8f.png" 
-              alt="Gurukulam" 
-              className="h-20 w-20 rounded-full border-2 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300"
-            />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-        </Link>
+      <div className="container mx-auto px-5">
+        {/* Logo Section */}
+        <div className="flex justify-center mb-4">
+          <Link to="/" className="group transition-all duration-300 hover:scale-105">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/35592194-787a-4331-9848-3f5692075b8f.png" 
+                alt="Gurukulam" 
+                className="h-20 w-20 rounded-full border-2 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </Link>
+        </div>
 
-        
-        <nav className="mt-4 md:mt-0 flex items-center gap-4">
+        {/* Auth and Language Controls */}
+        <div className="flex justify-center items-center gap-2 mb-4">
+          <AuthButton />
+          <LanguageSwitcher />
+        </div>
+
+        {/* Navigation */}
+        <nav className="flex justify-center">
           <ul className="flex flex-wrap justify-center gap-3">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
@@ -59,10 +68,6 @@ const Header = () => {
               );
             })}
           </ul>
-          <div className="flex items-center gap-2">
-            <AuthButton />
-            <LanguageSwitcher />
-          </div>
         </nav>
       </div>
     </header>
@@ -70,3 +75,4 @@ const Header = () => {
 };
 
 export default Header;
+
