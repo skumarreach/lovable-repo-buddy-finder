@@ -3,12 +3,10 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AboutHero from '@/components/AboutHero';
-import OurStory from '@/components/OurStory';
 import OurVision from '@/components/OurVision';
 import OurApproach from '@/components/OurApproach';
 import OurTeam from '@/components/OurTeam';
 import AboutTestimonials from '@/components/AboutTestimonials';
-import AboutCTA from '@/components/AboutCTA';
 import ParticipateWidget from '@/components/ParticipateWidget';
 
 const About = () => {
@@ -22,12 +20,10 @@ const About = () => {
       <AboutHero />
       
       <main id="main-content">
-        <OurStory />
         <OurVision />
         <OurApproach />
         <OurTeam />
         <AboutTestimonials />
-        <AboutCTA />
       </main>
       
       <Footer />
