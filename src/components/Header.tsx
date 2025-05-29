@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -12,7 +11,6 @@ const Header = () => {
     { path: '/causes', label: 'Causes' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/transparency', label: 'Transparency' },
-    { path: '/donate', label: 'Donate' },
     { path: '/contact', label: 'Contact' }
   ];
 

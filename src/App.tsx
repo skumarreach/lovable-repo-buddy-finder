@@ -9,7 +9,6 @@ import Social from "./pages/Social";
 import About from "./pages/About";
 import Causes from "./pages/Causes";
 import Gallery from "./pages/Gallery";
-import Donate from "./pages/Donate";
 import Contact from "./pages/Contact";
 import Transparency from "./pages/Transparency";
 import NotFound from "./pages/NotFound";
@@ -28,7 +27,6 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/causes" element={<Causes />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/donate" element={<Donate />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/transparency" element={<Transparency />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
