@@ -1,7 +1,10 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-slate-800 text-white py-12 text-center">
       <div className="container mx-auto px-5">
@@ -24,7 +27,7 @@ const Footer = () => {
         <p className="mb-2">Gurukulam Integrated Centre for Children with Special Needs</p>
         <p className="mb-4">Tax exemption under 80G available for all donations</p>
         <p className="text-sm text-slate-300">
-          © 2025 Gurukulam Integrated Centre for Children with Special Needs. All rights reserved.
+          © {currentYear} Gurukulam Integrated Centre for Children with Special Needs. All rights reserved.
         </p>
       </div>
     </footer>
