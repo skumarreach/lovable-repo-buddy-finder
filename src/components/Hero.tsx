@@ -15,12 +15,6 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm text-white mb-8">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-            Transforming Lives Since 2015
-          </div>
-          
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             {t('hero.title')}

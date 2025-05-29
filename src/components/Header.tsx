@@ -29,9 +29,9 @@ const Header = () => {
   return (
     <header className="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-4 shadow-lg">
       <div className="container mx-auto px-5">
-        {/* First Line: Logo on left, Auth & Language on right */}
+        {/* First Line: Logo on left, Badge in center, Auth & Language on right */}
         <div className="flex justify-between items-center">
-          {/* Logo Section with Dropdown - Top Left */}
+          {/* Logo Section with Dropdown - Left */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="group transition-all duration-300 hover:scale-105 flex items-center gap-2">
@@ -82,7 +82,15 @@ const Header = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          {/* Auth and Language Controls - Top Right */}
+          {/* Center Badge */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm text-white">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+              Transforming Lives Since 2015
+            </div>
+          </div>
+
+          {/* Auth and Language Controls - Right */}
           <div className="flex items-center gap-2">
             <AuthButton />
             <LanguageSwitcher />
