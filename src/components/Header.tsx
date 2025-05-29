@@ -44,8 +44,8 @@ const Header = () => {
         </div>
 
         {/* Second Line: Navigation */}
-        <nav className="flex justify-center">
-          <ul className="flex flex-wrap justify-center gap-3">
+        <nav className="w-full">
+          <ul className="flex justify-between w-full">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
