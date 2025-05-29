@@ -9,9 +9,6 @@ const ContactHero = () => {
         <p className="text-xl max-w-4xl mx-auto mb-8">
           We're here to answer your questions, provide support, and help you learn more about our programs for children with special needs. Reach out through any of our communication channels.
         </p>
-        <a href="#contact-form" className="inline-block bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-colors">
-          Contact Us Now
-        </a>
       </div>
     </section>
   );
