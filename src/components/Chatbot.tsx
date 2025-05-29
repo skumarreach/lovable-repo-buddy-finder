@@ -109,7 +109,7 @@ const Chatbot = () => {
           className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-full shadow-lg flex items-center space-x-2"
         >
           <Bot className="w-4 h-4" />
-          <span className="text-sm">Chat with real person</span>
+          <span className="text-sm">Talk to us to know more</span>
         </Button>
       </div>
     );
