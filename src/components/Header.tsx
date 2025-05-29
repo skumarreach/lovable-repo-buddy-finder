@@ -1,9 +1,21 @@
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation();
+  
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/causes', label: 'Causes' },
+    { path: '/gallery', label: 'Gallery' },
+    { path: '/donate', label: 'Donate' },
+    { path: '/contact', label: 'Contact' }
+  ];
+
   return (
-    <header className="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-4">
+    <header className="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-4 shadow-lg">
       <div className="container mx-auto px-5 flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center">
           <img 
@@ -13,13 +25,28 @@ const Header = () => {
           />
         </div>
         <nav className="mt-4 md:mt-0">
-          <ul className="flex space-x-6">
-            <li><Link to="/" className="hover:text-cyan-300 transition-colors">Home</Link></li>
-            <li><Link to="/about" className="hover:text-cyan-300 transition-colors">About</Link></li>
-            <li><Link to="/causes" className="hover:text-cyan-300 transition-colors">Causes</Link></li>
-            <li><Link to="/gallery" className="hover:text-cyan-300 transition-colors">Gallery</Link></li>
-            <li><Link to="/donate" className="hover:text-cyan-300 transition-colors">Donate</Link></li>
-            <li><Link to="/contact" className="hover:text-cyan-300 transition-colors">Contact</Link></li>
+          <ul className="flex flex-wrap justify-center gap-3">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <li key={item.path}>
+                  <Link 
+                    to={item.path} 
+                    className={`
+                      inline-block px-6 py-2.5 rounded-full text-sm font-medium 
+                      transition-all duration-300 ease-in-out
+                      border-2 border-transparent
+                      ${isActive 
+                        ? 'bg-white text-blue-800 shadow-lg transform scale-105' 
+                        : 'bg-blue-700/50 text-white hover:bg-white hover:text-blue-800 hover:shadow-md hover:scale-105 backdrop-blur-sm'
+                      }
+                    `}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
