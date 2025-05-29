@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -8,8 +9,8 @@ const Header = () => {
         <div className="text-2xl font-bold">Gurukulam</div>
         <nav className="mt-4 md:mt-0">
           <ul className="flex space-x-6">
-            <li><a href="#" className="hover:text-yellow-400 transition-colors">Home</a></li>
-            <li><a href="#" className="hover:text-yellow-400 transition-colors">About</a></li>
+            <li><Link to="/" className="hover:text-yellow-400 transition-colors">Home</Link></li>
+            <li><Link to="/about" className="hover:text-yellow-400 transition-colors">About</Link></li>
             <li><a href="#" className="hover:text-yellow-400 transition-colors">Causes</a></li>
             <li><a href="#" className="hover:text-yellow-400 transition-colors">Gallery</a></li>
             <li><a href="#" className="hover:text-yellow-400 transition-colors">Donate</a></li>
