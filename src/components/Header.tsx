@@ -33,7 +33,7 @@ const Header = () => {
                   <Link 
                     to={item.path} 
                     className={`
-                      inline-block px-6 py-2.5 rounded-full text-sm font-medium 
+                      inline-block px-4 py-1.5 rounded-full text-xs font-medium 
                       transition-all duration-300 ease-in-out
                       border-2 border-transparent
                       ${isActive 
