@@ -9,6 +9,7 @@ import OurApproach from '@/components/OurApproach';
 import OurTeam from '@/components/OurTeam';
 import AboutTestimonials from '@/components/AboutTestimonials';
 import AboutCTA from '@/components/AboutCTA';
+import ParticipateWidget from '@/components/ParticipateWidget';
 
 const About = () => {
   return (
@@ -30,6 +31,7 @@ const About = () => {
       </main>
       
       <Footer />
+      <ParticipateWidget />
     </div>
   );
 };

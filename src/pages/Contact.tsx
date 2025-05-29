@@ -10,6 +10,7 @@ import ContactFAQ from '@/components/ContactFAQ';
 import ContactEmergency from '@/components/ContactEmergency';
 import ContactAccessibility from '@/components/ContactAccessibility';
 import ContactCTA from '@/components/ContactCTA';
+import ParticipateWidget from '@/components/ParticipateWidget';
 
 const Contact = () => {
   return (
@@ -32,6 +33,7 @@ const Contact = () => {
       </main>
       
       <Footer />
+      <ParticipateWidget />
     </div>
   );
 };

@@ -8,6 +8,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import GivingSection from '@/components/GivingSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import ParticipateWidget from '@/components/ParticipateWidget';
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       </main>
       
       <Footer />
+      <ParticipateWidget />
     </div>
   );
 };

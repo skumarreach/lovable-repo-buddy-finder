@@ -8,6 +8,7 @@ import StudentJourney from '@/components/StudentJourney';
 import GalleryImpact from '@/components/GalleryImpact';
 import GalleryTestimonials from '@/components/GalleryTestimonials';
 import GalleryCTA from '@/components/GalleryCTA';
+import ParticipateWidget from '@/components/ParticipateWidget';
 
 const Gallery = () => {
   return (
@@ -28,6 +29,7 @@ const Gallery = () => {
       </main>
       
       <Footer />
+      <ParticipateWidget />
     </div>
   );
 };

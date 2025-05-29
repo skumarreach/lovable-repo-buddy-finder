@@ -10,6 +10,7 @@ import DonateTransparency from '@/components/DonateTransparency';
 import DonateTestimonials from '@/components/DonateTestimonials';
 import DonateForm from '@/components/DonateForm';
 import DonateCTA from '@/components/DonateCTA';
+import ParticipateWidget from '@/components/ParticipateWidget';
 
 const Donate = () => {
   return (
@@ -32,6 +33,7 @@ const Donate = () => {
       </main>
       
       <Footer />
+      <ParticipateWidget />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import DonationOptions from '@/components/DonationOptions';
 import CausesTestimonials from '@/components/CausesTestimonials';
 import Newsletter from '@/components/Newsletter';
 import CausesCTA from '@/components/CausesCTA';
+import ParticipateWidget from '@/components/ParticipateWidget';
 
 const Causes = () => {
   return (
@@ -32,6 +33,7 @@ const Causes = () => {
       </main>
       
       <Footer />
+      <ParticipateWidget />
     </div>
   );
 };
