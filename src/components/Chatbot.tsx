@@ -1,6 +1,5 @@
-
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, X, Send } from 'lucide-react';
+import { Bot, X, Send, Minimize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface Message {
@@ -11,7 +10,7 @@ interface Message {
 }
 
 const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -101,50 +100,73 @@ const Chatbot = () => {
     }
   };
 
+  if (isMinimized) {
+    return (
+      <div className="fixed bottom-4 right-4 z-50">
+        <Button
+          onClick={() => setIsMinimized(false)}
+          className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full shadow-lg"
+        >
+          <Bot className="w-4 h-4" />
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <div className="fixed bottom-4 right-4 z-50">
-      <div className="bg-white rounded-lg shadow-2xl border w-80 h-96 flex flex-col">
+      <div className="bg-white rounded-lg shadow-2xl border w-64 h-72 flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b bg-blue-600 text-white rounded-t-lg">
-          <div className="flex items-center space-x-2">
-            <Bot className="w-5 h-5" />
-            <span className="font-medium">Gurukulam Assistant</span>
+        <div className="flex items-center justify-between p-2 border-b bg-blue-600 text-white rounded-t-lg">
+          <div className="flex items-center space-x-1">
+            <Bot className="w-3 h-3" />
+            <span className="font-medium text-xs">Chat</span>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsOpen(false)}
-            className="h-6 w-6 text-white hover:bg-white/10"
-          >
-            <X className="w-4 h-4" />
-          </Button>
+          <div className="flex space-x-1">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMinimized(true)}
+              className="h-5 w-5 text-white hover:bg-white/10"
+            >
+              <Minimize2 className="w-3 h-3" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMinimized(true)}
+              className="h-5 w-5 text-white hover:bg-white/10"
+            >
+              <X className="w-3 h-3" />
+            </Button>
+          </div>
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-2 space-y-2">
           {messages.map((message) => (
             <div
               key={message.id}
               className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
             >
               <div
-                className={`max-w-[80%] p-3 rounded-lg ${
+                className={`max-w-[80%] p-2 rounded text-xs ${
                   message.isBot
                     ? 'bg-gray-100 text-gray-800'
                     : 'bg-blue-600 text-white'
                 }`}
               >
-                <p className="text-sm">{message.text}</p>
+                <p>{message.text}</p>
               </div>
             </div>
           ))}
           {isTyping && (
             <div className="flex justify-start">
-              <div className="bg-gray-100 p-3 rounded-lg">
+              <div className="bg-gray-100 p-2 rounded">
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce"></div>
+                  <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                  <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 </div>
               </div>
             </div>
@@ -153,24 +175,24 @@ const Chatbot = () => {
         </div>
 
         {/* Input */}
-        <div className="p-4 border-t">
-          <div className="flex space-x-2">
+        <div className="p-2 border-t">
+          <div className="flex space-x-1">
             <input
               type="text"
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Type your message..."
-              className="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm"
+              placeholder="Type message..."
+              className="flex-1 px-2 py-1 border rounded text-xs focus:outline-none focus:ring-1 focus:ring-blue-600"
               disabled={isTyping}
             />
             <Button
               onClick={handleSendMessage}
               disabled={!inputMessage.trim() || isTyping}
               size="icon"
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-blue-600 hover:bg-blue-700 h-6 w-6"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-3 h-3" />
             </Button>
           </div>
         </div>
