@@ -4,12 +4,12 @@ import SectionTitle from './SectionTitle';
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 px-8 bg-blue-600 text-white">
+    <section className="py-16 px-8 bg-slate-700 text-white">
       <div className="container mx-auto">
-        <SectionTitle 
-          title="Voices of Our Community"
-          description="Stories of growth, connection, and transformation."
-        />
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 text-white">Voices of Our Community</h2>
+          <p className="text-lg max-w-3xl mx-auto text-slate-200">Stories of growth, connection, and transformation.</p>
+        </div>
         
         <div className="text-center max-w-4xl mx-auto">
           <p className="text-xl italic mb-6">

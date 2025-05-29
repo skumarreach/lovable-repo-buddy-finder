@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   return (
     <section 
-      className="relative bg-slate-600 text-white text-center py-32 px-8"
+      className="relative bg-slate-700 text-white text-center py-32 px-8"
       style={{
-        backgroundImage: 'linear-gradient(rgba(52, 73, 94, 0.7), rgba(52, 73, 94, 0.7)), url("https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")',
+        backgroundImage: 'linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url("https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
@@ -21,12 +21,12 @@ const Hero = () => {
         </p>
         <div className="space-x-4">
           <Button 
-            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-lg font-bold"
+            className="bg-slate-600 hover:bg-slate-500 text-white px-6 py-3 rounded-full text-lg font-bold"
           >
             Learn More
           </Button>
           <Button 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-bold"
+            className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-full text-lg font-bold"
           >
             Get Involved
           </Button>
