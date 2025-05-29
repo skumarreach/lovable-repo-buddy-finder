@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +5,13 @@ const Footer = () => {
   return (
     <footer className="bg-slate-800 text-white py-12 text-center">
       <div className="container mx-auto px-5">
-        <div className="text-2xl font-bold mb-8">Gurukulam</div>
+        <div className="flex justify-center mb-8">
+          <img 
+            src="/lovable-uploads/35592194-787a-4331-9848-3f5692075b8f.png" 
+            alt="Gurukulam" 
+            className="h-12 w-12"
+          />
+        </div>
         <div className="flex flex-wrap justify-center space-x-4 mb-8">
           <Link to="/" className="hover:underline">Home</Link>
           <Link to="/about" className="hover:underline">About</Link>
