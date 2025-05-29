@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, X, Send, Minimize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -105,9 +106,10 @@ const Chatbot = () => {
       <div className="fixed bottom-4 right-4 z-50">
         <Button
           onClick={() => setIsMinimized(false)}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full shadow-lg"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-full shadow-lg flex items-center space-x-2"
         >
           <Bot className="w-4 h-4" />
+          <span className="text-sm">Chat with real person</span>
         </Button>
       </div>
     );
