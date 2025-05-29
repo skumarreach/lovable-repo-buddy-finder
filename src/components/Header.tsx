@@ -6,6 +6,7 @@ const Header = () => {
   const location = useLocation();
   
   const navItems = [
+    { path: '/social', label: 'Social Network' },
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/causes', label: 'Causes' },
