@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GalleryHero from '@/components/GalleryHero';
@@ -12,10 +13,12 @@ import ParticipateWidget from '@/components/ParticipateWidget';
 import Chatbot from '@/components/Chatbot';
 
 const Gallery = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen">
       <a href="#main-content" className="absolute -top-10 left-0 bg-red-600 text-white p-2 z-50 focus:top-0">
-        Skip to main content
+        {t('common.skipToContent')}
       </a>
       
       <Header />

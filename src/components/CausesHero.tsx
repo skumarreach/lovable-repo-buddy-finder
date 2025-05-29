@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CausesHero = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative bg-slate-600 text-white text-center py-32 px-8">
       <div 
@@ -11,9 +14,9 @@ const CausesHero = () => {
         }}
       />
       <div className="relative container mx-auto">
-        <h1 className="text-5xl font-bold mb-6">Transform Lives Through Your Support</h1>
+        <h1 className="text-5xl font-bold mb-6">{t('causes.hero.title')}</h1>
         <p className="text-xl max-w-4xl mx-auto mb-8">
-          Your contribution creates pathways to independence, dignity, and meaningful futures for children and young adults with special needs.
+          {t('causes.hero.subtitle')}
         </p>
       </div>
     </section>

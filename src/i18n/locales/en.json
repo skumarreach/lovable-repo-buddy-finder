@@ -15,6 +15,55 @@
     "copyright": "© {{year}} Gurukulam Integrated Centre for Children with Special Needs. All rights reserved.",
     "privacyPolicy": "Privacy Policy"
   },
+  "home": {
+    "hero": {
+      "title": "Nurturing Potential, Celebrating Differences",
+      "subtitle": "At Gurukulam, we believe every child with special needs has extraordinary potential waiting to unfold. Through personalized education, therapeutic support, and boundless love, we help children discover their unique gifts and build meaningful futures."
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Where Special Care Meets Extraordinary Potential",
+      "subtitle": "Transforming lives through personalized education, holistic development, and unwavering belief in every child's unique abilities."
+    }
+  },
+  "causes": {
+    "hero": {
+      "title": "Transform Lives Through Your Support",
+      "subtitle": "Your contribution creates pathways to independence, dignity, and meaningful futures for children and young adults with special needs."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Connect With Us",
+      "subtitle": "We're here to answer your questions, provide support, and help you learn more about our programs for children with special needs. Reach out through any of our communication channels."
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Moments of Joy and Growth",
+      "subtitle": "Discover the incredible journey of our students through photos and stories that capture their achievements, milestones, and the joy of learning."
+    }
+  },
+  "social": {
+    "title": "Social Network",
+    "subtitle": "Connect with our community, share your experiences, and stay updated with the latest news and events from Gurukulam.",
+    "twitter": {
+      "title": "Follow Us on Twitter",
+      "description": "Stay updated with our latest news and initiatives",
+      "button": "Follow @Gurukulam"
+    },
+    "facebook": {
+      "title": "Join Our Facebook",
+      "description": "Connect with fellow supporters and share your stories",
+      "button": "Join Community"
+    },
+    "pinterest": {
+      "title": "Pinterest Board",
+      "description": "Explore our visual stories and inspiration",
+      "button": "View Pins"
+    }
+  },
   "transparency": {
     "title": "Complete Transparency",
     "subtitle": "At Gurukulam, we believe transparency builds trust. Here's an honest look at our journey, challenges, and unwavering commitment to the children we serve.",
@@ -58,6 +107,10 @@
     }
   },
   "common": {
-    "skipToContent": "Skip to main content"
+    "skipToContent": "Skip to main content",
+    "donateNow": "Donate Now",
+    "volunteer": "Volunteer",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More"
   }
 }
