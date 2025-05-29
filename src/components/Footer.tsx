@@ -11,7 +11,7 @@ const Footer = () => {
           <Link to="/" className="hover:underline">Home</Link>
           <Link to="/about" className="hover:underline">About</Link>
           <Link to="/causes" className="hover:underline">Causes</Link>
-          <a href="#" className="hover:underline">Gallery</a>
+          <Link to="/gallery" className="hover:underline">Gallery</Link>
           <a href="#" className="hover:underline">Donate</a>
           <a href="#" className="hover:underline">Contact</a>
           <a href="#" className="hover:underline">Privacy Policy</a>
