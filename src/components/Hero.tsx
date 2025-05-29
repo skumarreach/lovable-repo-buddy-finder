@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
@@ -19,18 +18,6 @@ const Hero = () => {
         <p className="text-xl mb-8 max-w-3xl mx-auto">
           Celebrating unique minds, fostering inclusiveness, and creating opportunities for everyone to thrive and contribute.
         </p>
-        <div className="space-x-4">
-          <Button 
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-6 py-3 rounded-full text-lg font-bold"
-          >
-            Learn More
-          </Button>
-          <Button 
-            className="bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white px-6 py-3 rounded-full text-lg font-bold"
-          >
-            Get Involved
-          </Button>
-        </div>
       </div>
     </section>
   );
