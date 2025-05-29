@@ -13,7 +13,7 @@ const Footer = () => {
           <Link to="/causes" className="hover:underline">Causes</Link>
           <Link to="/gallery" className="hover:underline">Gallery</Link>
           <Link to="/donate" className="hover:underline">Donate</Link>
-          <a href="#" className="hover:underline">Contact</a>
+          <Link to="/contact" className="hover:underline">Contact</Link>
           <a href="#" className="hover:underline">Privacy Policy</a>
         </div>
         <p className="mb-2">Gurukulam Integrated Centre for Children with Special Needs</p>
